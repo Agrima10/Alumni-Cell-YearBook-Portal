@@ -1,14 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/navbar/navbar.jsx';
-import Members from './components/team/team_members.jsx';
+import Homepage from './components/Homepage/Homepage';
+
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
-
-      <Members></Members>
+    <Homepage></Homepage>
     </div>
   );
 }
