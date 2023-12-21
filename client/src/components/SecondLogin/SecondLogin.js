@@ -130,6 +130,25 @@ const SecondLogin = () => {
     navigate(`/edit/${profile._id}`)
   }
 
+
+  // function for editing comments
+
+  const [storeComment , setStore] = useState("");
+  const [boolBtn , setboolBtn] = useState(false);
+
+  const editNavigate = useNavigate();
+
+  
+  const HandlEdit = (val)=>{
+     setStore(val.comment);
+     setboolBtn(true);
+     editNavigate(`/comment/${val.name}/${val.roll_no}`);
+     console.log(val.roll_no);
+
+
+  }
+
+
   return (
     <>
       {loading && (
@@ -229,6 +248,7 @@ const SecondLogin = () => {
                 {comments.map((val) =>
                         <div id="comment">
                           <p id="commentp">{val.comment}</p>
+                         <button id='editBtn' onClick={()=>{HandlEdit(val)}}>Edit Comment</button> 
                           <p id="commentby">-{val.name}</p>
                         </div>
                       )}
