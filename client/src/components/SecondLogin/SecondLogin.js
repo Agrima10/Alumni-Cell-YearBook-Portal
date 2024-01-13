@@ -132,20 +132,14 @@ const SecondLogin = () => {
 
 
   // function for editing comments
-
-  const [storeComment , setStore] = useState("");
-  const [boolBtn , setboolBtn] = useState(false);
+  // Need to work on this 
 
   const editNavigate = useNavigate();
 
   
   const HandlEdit = (val)=>{
-     setStore(val.comment);
-     setboolBtn(true);
-     editNavigate(`/comment/${val.name}/${val.roll_no}`);
-     console.log(val.roll_no);
-
-
+    console.log("Clicked on edit");
+    navigate(`/comment/edit/${val.name}`);
   }
 
 
